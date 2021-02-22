@@ -1,0 +1,21 @@
+{
+    "name": "packages/sitemap",
+    "description": "Sitemap package for Laravel.",
+    "license": "MIT",
+    "require": {
+    },
+    "autoload": {
+        "psr-4": {
+            "EG\\Sitemap\\": "src"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "EG\\Sitemap\\Providers\\SitemapServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}

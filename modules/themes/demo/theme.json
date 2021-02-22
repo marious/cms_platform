@@ -1,0 +1,8 @@
+{
+    "name": "Demo Theme",
+    "namespace": "Theme\\Demo\\",
+    "description": "Ecommerce shopping theme",
+    "author": "Mohammed Raya",
+    "version": "1.0",
+    "required_plugins": []
+}

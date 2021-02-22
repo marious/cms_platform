@@ -1,0 +1,9 @@
+<?php
+
+namespace EG\{Module}\Repositories\Interfaces;
+
+use EG\Support\Repositories\Interfaces\RepositoryInterface;
+
+interface {Name}Interface extends RepositoryInterface
+{
+}

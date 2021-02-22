@@ -1,0 +1,24 @@
+{
+    "name": "packages/widget",
+    "description": "Widget package for CMS application",
+    "type": "package",
+    "autoload": {
+        "psr-4": {
+            "EG\\Widget\\": "src"
+        }
+    },
+    "require": {
+
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "EG\\Widget\\Providers\\WidgetServiceProvider"
+            ],
+            "aliases": {
+                "Widget": "EG\\Widget\\Facades\\WidgetFacade",
+                "WidgetGroup": "EG\\Widget\\Facades\\WidgetGroupFacade"
+            }
+        }
+    }
+}

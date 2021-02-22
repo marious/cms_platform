@@ -1,0 +1,9 @@
+{
+    "name": "Translation",
+    "namespace": "EG\\Translation\\",
+    "provider": "EG\\Translation\\Providers\\TranslationServiceProvider",
+    "author": "",
+    "url": "",
+    "version": "5.8",
+    "description": "Manage translation text"
+}

@@ -1,0 +1,9 @@
+{
+  "name": "Blog",
+  "namespace": "EG\\Blog\\",
+  "provider": "EG\\Blog\\Providers\\BlogServiceProvider",
+  "author": "",
+  "url": "",
+  "version": "1.0",
+  "description": "Manage posts, categories, tags"
+}

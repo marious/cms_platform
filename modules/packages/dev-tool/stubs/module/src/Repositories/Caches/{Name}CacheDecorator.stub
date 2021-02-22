@@ -1,0 +1,11 @@
+<?php
+
+namespace EG\{Module}\Repositories\Caches;
+
+use EG\Support\Repositories\Caches\CacheAbstractDecorator;
+use EG\{Module}\Repositories\Interfaces\{Name}Interface;
+
+class {Name}CacheDecorator extends CacheAbstractDecorator implements {Name}Interface
+{
+
+}

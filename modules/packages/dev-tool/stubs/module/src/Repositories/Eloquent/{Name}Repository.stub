@@ -1,0 +1,10 @@
+<?php
+
+namespace EG\{Module}\Repositories\Eloquent;
+
+use EG\Support\Repositories\Eloquent\RepositoriesAbstract;
+use EG\{Module}\Repositories\Interfaces\{Name}Interface;
+
+class {Name}Repository extends RepositoriesAbstract implements {Name}Interface
+{
+}

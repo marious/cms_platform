@@ -1,0 +1,9 @@
+{
+    "name": "Simple Slider",
+    "namespace": "EG\\SimpleSlider\\",
+    "provider": "EG\\SimpleSlider\\Providers\\SimpleSliderServiceProvider",
+    "author": "",
+    "url": "",
+    "version": "",
+    "description": "A plugin to create sliders"
+}

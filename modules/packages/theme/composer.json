@@ -1,0 +1,26 @@
+{
+    "name": "packages/theme",
+    "description": "Theme package for CMS application",
+    "type": "package",
+    "autoload": {
+        "psr-4": {
+            "EG\\Theme\\": "src"
+        }
+    },
+    "require": {
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "EG\\Theme\\Providers\\ThemeServiceProvider"
+            ],
+            "aliases": {
+                "Theme": "EG\\Theme\\Facades\\ThemeFacade",
+                "ThemeOption": "EG\\Theme\\Facades\\ThemeOptionFacade",
+                "ThemeManager": "EG\\Theme\\Facades\\ManagerFacade",
+                "AdminBar": "EG\\Theme\\Facades\\AdminBarFacade",
+                "SiteMapManager": "EG\\Theme\\Facades\\SiteMapManagerFacade"
+            }
+        }
+    }
+}
