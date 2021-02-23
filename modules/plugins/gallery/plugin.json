@@ -1,0 +1,9 @@
+{
+    "name": "Gallery",
+    "namespace": "EG\\Gallery\\",
+    "provider": "EG\\Gallery\\Providers\\GalleryServiceProvider",
+    "author": "Mohammed Raya",
+    "url": "",
+    "version": "1.0",
+    "description": "Create or easy to add gallery images to posts, pages..."
+}
