@@ -1,0 +1,80 @@
+<?php
+namespace EG\Contact\Providers;
+
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\ServiceProvider;
+use EG\Contact\Repositories\Interfaces\ContactInterface;
+use Theme;
+use Html;
+
+class HookServiceProvider extends ServiceProvider
+{
+    public function boot()
+    {
+        $this->app->booted(function () {
+            add_filter(BASE_FILTER_TOP_HEADER_LAYOUT, [$this, 'registerTopHeaderNotification'], 120);
+            add_filter(BASE_FILTER_APPEND_MENU_NAME, [$this, 'getUnreadCount'], 120, 2);
+
+            if (function_exists('add_shortcode')) {
+                add_shortcode('contact-form', trans('plugins/contact::contact.shortcode_name'),
+                        trans('plugins/contact::contact.shortcode_description'), [$this, 'form']);
+                shortcode()
+                    ->setAdminConfig('contact-form', view('plugins/contact::partials.short-code-admin-config')->render());
+            }
+        });
+    }
+
+    public function registerTopHeaderNotification($options)
+    {
+        if (Auth::user()->hasPermission('contacts.edit')) {
+            $contacts = $this->app->make(ContactInterface::class)
+                ->getUnread(['id', 'name', 'email', 'phone', 'created_at']);
+
+            if ($contacts->count() == 0) {
+                return null;
+            }
+
+            return $options . view('plugins/contact::partials.notification', compact('contacts'))->render();
+        }
+
+        return $options;
+    }
+
+
+    public function getUnreadCount($number, $menuId)
+    {
+        if ($menuId == 'cms-plugins-contact') {
+            $unread = $this->app->make(ContactInterface::class)->countUnread();
+            if ($unread > 0) {
+                return Html::tag('span', (string)$unread, ['class' => 'badge badge-success'])->toHtml();
+            }
+        }
+
+        return $number;
+    }
+
+    public function form($shortcode)
+    {
+        $view = apply_filters(CONTACT_FORM_TEMPLATE_VIEW, 'plugins/contact::forms.contact');
+
+        if (defined('THEME_OPTIONS_MODULE_SCREEN_NAME')) {
+            $this->app->booted(function () {
+                Theme::asset()
+                    ->usePath(false)
+                    ->add('contact-css', asset('vendor/core/plugins/contact/css/contact-public.css'), [], [], '1.0.0');
+
+                Theme::asset()
+                    ->container('footer')
+                    ->usePath(false)
+                    ->add('contact-public-js', asset('vendor/core/plugins/contact/js/contact-public.js'),
+                        ['jquery'], [], '1.0.0');
+            });
+        }
+
+        if ($shortcode->view && view()->exists($shortcode->view)) {
+            $view = $shortcode->view;
+        }
+
+        return view($view)->render();
+    }
+}

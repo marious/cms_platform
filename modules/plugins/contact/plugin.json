@@ -1,0 +1,9 @@
+{
+    "name": "Contact Form",
+    "namespace": "EG\\Contact\\",
+    "provider": "EG\\Contact\\Providers\\ContactServiceProvider",
+    "author": "Mohammed Raya",
+    "url": "",
+    "version": "1.0",
+    "description": "Contact Form"
+}
