@@ -1,6 +1,8 @@
 {
-    "/vendor/core/plugins/contact/js/contact.js": "/vendor/core/plugins/contact/js/contact.js",
-    "/vendor/core/plugins/contact/css/contact.css": "/vendor/core/plugins/contact/css/contact.css",
-    "/vendor/core/plugins/contact/css/contact-public.css": "/vendor/core/plugins/contact/css/contact-public.css",
-    "/vendor/core/plugins/contact/js/contact-public.js": "/vendor/core/plugins/contact/js/contact-public.js"
+    "/vendor/core/plugins/gallery/js/gallery.js": "/vendor/core/plugins/gallery/js/gallery.js",
+    "/vendor/core/plugins/gallery/css/gallery.css": "/vendor/core/plugins/gallery/css/gallery.css",
+    "/vendor/core/plugins/gallery/css/object-gallery.css": "/vendor/core/plugins/gallery/css/object-gallery.css",
+    "/vendor/core/plugins/gallery/css/admin-gallery.css": "/vendor/core/plugins/gallery/css/admin-gallery.css",
+    "/vendor/core/plugins/gallery/js/gallery-admin.js": "/vendor/core/plugins/gallery/js/gallery-admin.js",
+    "/vendor/core/plugins/gallery/js/object-gallery.js": "/vendor/core/plugins/gallery/js/object-gallery.js"
 }
