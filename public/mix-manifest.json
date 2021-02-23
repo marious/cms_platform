@@ -1,6 +1,6 @@
 {
-    "/vendor/core/plugins/simple-slider/js/simple-slider.js": "/vendor/core/plugins/simple-slider/js/simple-slider.js",
-    "/vendor/core/plugins/simple-slider/css/simple-slider.css": "/vendor/core/plugins/simple-slider/css/simple-slider.css",
-    "/vendor/core/plugins/simple-slider/css/simple-slider-admin.css": "/vendor/core/plugins/simple-slider/css/simple-slider-admin.css",
-    "/vendor/core/plugins/simple-slider/js/simple-slider-admin.js": "/vendor/core/plugins/simple-slider/js/simple-slider-admin.js"
+    "/vendor/core/plugins/contact/js/contact.js": "/vendor/core/plugins/contact/js/contact.js",
+    "/vendor/core/plugins/contact/css/contact.css": "/vendor/core/plugins/contact/css/contact.css",
+    "/vendor/core/plugins/contact/css/contact-public.css": "/vendor/core/plugins/contact/css/contact-public.css",
+    "/vendor/core/plugins/contact/js/contact-public.js": "/vendor/core/plugins/contact/js/contact-public.js"
 }
