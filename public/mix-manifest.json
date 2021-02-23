@@ -1,7 +1,6 @@
 {
-    "/vendor/core/plugins/translation/js/locales.js": "/vendor/core/plugins/translation/js/locales.js",
-    "/vendor/core/plugins/translation/js/theme-translations.js": "/vendor/core/plugins/translation/js/theme-translations.js",
-    "/vendor/core/plugins/translation/js/translation.js": "/vendor/core/plugins/translation/js/translation.js",
-    "/vendor/core/plugins/translation/css/translation.css": "/vendor/core/plugins/translation/css/translation.css",
-    "/vendor/core/plugins/translation/css/theme-translations.css": "/vendor/core/plugins/translation/css/theme-translations.css"
+    "/vendor/core/plugins/simple-slider/js/simple-slider.js": "/vendor/core/plugins/simple-slider/js/simple-slider.js",
+    "/vendor/core/plugins/simple-slider/css/simple-slider.css": "/vendor/core/plugins/simple-slider/css/simple-slider.css",
+    "/vendor/core/plugins/simple-slider/css/simple-slider-admin.css": "/vendor/core/plugins/simple-slider/css/simple-slider-admin.css",
+    "/vendor/core/plugins/simple-slider/js/simple-slider-admin.js": "/vendor/core/plugins/simple-slider/js/simple-slider-admin.js"
 }
