@@ -1,0 +1,9 @@
+{
+    "name": "Block",
+    "namespace": "EG\\Block\\",
+    "provider": "EG\\Block\\Providers\\BlockServiceProvider",
+    "author": "Mohammed Raya",
+    "url": "",
+    "version": "1.0",
+    "description": "Manage static block (HTML, Text) on your theme"
+}
