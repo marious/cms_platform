@@ -6,6 +6,7 @@ use EG\Base\Enums\BaseStatusEnum;
 use EG\Base\Forms\FormAbstract;
 use EG\Gallery\Http\Requests\GalleryRequest;
 use EG\Gallery\Models\Gallery;
+use Language;
 
 class GalleryForm extends FormAbstract
 {
@@ -25,6 +26,8 @@ class GalleryForm extends FormAbstract
                 'attr'       => [
                     'placeholder'  => trans('core/base::forms.name_placeholder'),
                     'data-counter' => 120,
+                    'data-lang' => $this->getLang(),
+                    'class' => 'slug-field form-control',
                 ],
             ])
             ->add('description', 'textarea', [
@@ -59,5 +62,14 @@ class GalleryForm extends FormAbstract
                 'label_attr' => ['class' => 'control-label'],
             ])
             ->setBreakFieldPoint('status');
+    }
+
+    public function getLang()
+    {
+        $lang = Language::getDefaultLocale();
+        if (isset($_GET['ref_lang'])) {
+            $lang = $_GET['ref_lang'];
+        }
+        return $lang;
     }
 }

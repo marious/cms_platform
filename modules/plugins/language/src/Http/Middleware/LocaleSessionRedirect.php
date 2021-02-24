@@ -5,7 +5,7 @@ namespace EG\Language\Http\Middleware;
 use Closure;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
-use Langauge;
+use Language;
 
 class LocaleSessionRedirect extends LaravelLocalizationMiddlewareBase
 {

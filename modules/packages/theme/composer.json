@@ -12,7 +12,8 @@
     "extra": {
         "laravel": {
             "providers": [
-                "EG\\Theme\\Providers\\ThemeServiceProvider"
+                "EG\\Theme\\Providers\\ThemeServiceProvider",
+                "EG\\Theme\\Providers\\RouteServiceProvider"
             ],
             "aliases": {
                 "Theme": "EG\\Theme\\Facades\\ThemeFacade",
