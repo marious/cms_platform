@@ -6,6 +6,7 @@ use EG\Base\Traits\EnumCastable;
 use EG\Base\Enums\BaseStatusEnum;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Exception;
+use Spatie\Translatable\HasTranslations;
 
 class Tag extends BaseModel
 {
@@ -17,6 +18,7 @@ class Tag extends BaseModel
         'status',
         'author_id',
     ];
+
 
     protected $casts = [
         'status'  => BaseStatusEnum::class,

@@ -1,7 +1,12 @@
 @php
     $prefix = apply_filters(FILTER_SLUG_PREFIX, $prefix);
     $value = $value ? $value : old('slug');
-    $lang = strpos($name, '_') ? Str::before($name, '_') : '';
+    if (isset($_GET['ref_lang'])) {
+        $lang = trim($_GET['ref_lang']);
+        $name = strpos($name, '_') ? $lang . '_' . Str::after($name, '_') : '';
+    } else {
+        $lang = strpos($name, '_') ? Str::before($name, '_') : '';
+    }
     $prefix = $prefix ? $lang : '';
 @endphp
 

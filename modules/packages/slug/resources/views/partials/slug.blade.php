@@ -3,6 +3,13 @@ $value = '';
 if ($object->id && $object->slug) {
     $value = $object->getSlugItem()->getTranslation('key', $lang);
 }
+if (!isset($lang)) {
+    if (isset($_GET['ref_lang'])) {
+        $lang = trim($_GET['ref_lang']);
+    } else {
+        $lang = Language::getDefaultLocale();
+    }
+}
 @endphp
 @if (!$object->id)
     <div class="form-group @if ($errors->has('slug')) has-error @endif">

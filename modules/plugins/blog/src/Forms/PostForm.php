@@ -9,6 +9,7 @@ use EG\Blog\Forms\Fields\CategoryMultiField;
 use EG\Blog\Http\Requests\PostRequest;
 use EG\Blog\Models\Post;
 use EG\Blog\Repositories\Interfaces\CategoryInterface;
+use Language;
 
 class PostForm extends FormAbstract
 {
@@ -52,6 +53,8 @@ class PostForm extends FormAbstract
                 'attr'       => [
                     'placeholder'  => trans('core/base::forms.name_placeholder'),
                     'data-counter' => 120,
+                    'data-lang' => $this->getLang(),
+                    'class' => 'slug-field form-control',
                 ],
             ])
             ->add('description', 'textarea', [
@@ -107,5 +110,14 @@ class PostForm extends FormAbstract
                 ],
             ])
             ->setBreakFieldPoint('status');
+    }
+
+    public function getLang()
+    {
+        $lang = Language::getDefaultLocale();
+        if (isset($_GET['ref_lang'])) {
+            $lang = $_GET['ref_lang'];
+        }
+        return $lang;
     }
 }

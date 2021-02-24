@@ -6,6 +6,7 @@ use EG\Base\Enums\BaseStatusEnum;
 use EG\Base\Forms\FormAbstract;
 use EG\Page\Http\Requests\PageRequest;
 use EG\Page\Models\Page;
+use Language;
 
 class PageForm extends FormAbstract
 {
@@ -23,6 +24,8 @@ class PageForm extends FormAbstract
                 'attr'       => [
                     'placeholder'  => trans('core/base::forms.name_placeholder'),
                     'data-counter' => 120,
+                    'data-lang' => $this->getLang(),
+                    'class' => 'slug-field form-control',
                 ],
             ])
             ->add('description', 'textarea', [
@@ -62,5 +65,14 @@ class PageForm extends FormAbstract
                 'label_attr' => ['class' => 'control-label'],
             ])
             ->setBreakFieldPoint('status');
+    }
+
+    public function getLang()
+    {
+        $lang = Language::getDefaultLocale();
+        if (isset($_GET['ref_lang'])) {
+            $lang = $_GET['ref_lang'];
+        }
+        return $lang;
     }
 }

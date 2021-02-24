@@ -51,7 +51,6 @@ class BlogServiceProvider extends ServiceProvider
         SlugHelper::registerModule(Post::class, 'Blog Posts');
         SlugHelper::registerModule(Category::class, 'Blog Categories');
         SlugHelper::registerModule(Tag::class, 'Blog Tags');
-
         SlugHelper::setPrefix(Tag::class, 'tag');
 
 

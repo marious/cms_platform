@@ -6,9 +6,11 @@ use EG\Base\Enums\BaseStatusEnum;
 use EG\Base\Forms\FormAbstract;
 use EG\Blog\Http\Requests\CategoryRequest;
 use EG\Blog\Models\Category;
+use Language;
 
 class CategoryForm extends FormAbstract
 {
+
 
     /**
      * {@inheritDoc}
@@ -36,7 +38,9 @@ class CategoryForm extends FormAbstract
                 'label_attr' => ['class' => 'control-label required'],
                 'attr'       => [
                     'placeholder'  => trans('core/base::forms.name_placeholder'),
+                    'data-lang' => $this->getLang(),
                     'data-counter' => 120,
+                    'class' => 'slug-field form-control',
                 ],
             ])
             ->add('parent_id', 'customSelect', [
@@ -88,6 +92,15 @@ class CategoryForm extends FormAbstract
                 'choices'    => BaseStatusEnum::labels(),
             ])
             ->setBreakFieldPoint('status');
+    }
+
+    public function getLang()
+    {
+        $lang = Language::getDefaultLocale();
+        if (isset($_GET['ref_lang'])) {
+            $lang = $_GET['ref_lang'];
+        }
+        return $lang;
     }
 }
 

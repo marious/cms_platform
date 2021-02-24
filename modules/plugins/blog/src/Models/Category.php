@@ -8,7 +8,6 @@ use EG\Base\Traits\EnumCastable;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
-use Exception;
 
 class Category extends BaseModel
 {
@@ -25,6 +24,7 @@ class Category extends BaseModel
         'status',
         'author_id',
     ];
+
 
     protected $casts = [
       'status' => BaseStatusEnum::class,

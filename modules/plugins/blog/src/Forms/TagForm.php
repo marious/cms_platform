@@ -5,6 +5,8 @@ use EG\Blog\Models\Tag;
 use EG\Base\Forms\FormAbstract;
 use EG\Base\Enums\BaseStatusEnum;
 use EG\Blog\Http\Requests\TagRequest;
+use Language;
+
 
 class TagForm extends FormAbstract
 {
@@ -14,7 +16,6 @@ class TagForm extends FormAbstract
      */
     public function buildForm()
     {
-
 
         $this
             ->setupModel(new Tag)
@@ -26,6 +27,8 @@ class TagForm extends FormAbstract
                 'attr'       => [
                     'placeholder'  => trans('core/base::forms.name_placeholder'),
                     'data-counter' => 120,
+                    'data-lang' => $this->getLang(),
+                    'class' => 'slug-field form-control',
                 ],
             ])
             ->add('description', 'textarea', [
@@ -43,6 +46,15 @@ class TagForm extends FormAbstract
                 'choices'    => BaseStatusEnum::labels(),
             ])
             ->setBreakFieldPoint('status');
+    }
+
+    public function getLang()
+    {
+        $lang = Language::getDefaultLocale();
+        if (isset($_GET['ref_lang'])) {
+            $lang = $_GET['ref_lang'];
+        }
+        return $lang;
     }
 }
 
