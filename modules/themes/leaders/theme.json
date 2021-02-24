@@ -1,0 +1,8 @@
+{
+    "name": "Leaders Group Theme",
+    "namespace": "Theme\\Leaders\\",
+    "description": "Leaders Group Theme",
+    "author": "Mohammed Raya",
+    "version": "1.0",
+    "required_plugins": []
+}
