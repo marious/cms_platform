@@ -5,8 +5,8 @@
         <nav class="sidebar-nav">
             <ul id="sidebarnav" class="p-t-30">
                 @foreach ($menus = dashboard_menu()->getAll() as $menu)
-                    <li class="sidebar-item">
-                        <a class="sidebar-link waves-effect waves-dark @if(isset($menu['children']) && count($menu['children'])) has-arrow @endif" href="{{ $menu['url'] }} @if($menu['active']) selected @endif" aria-expanded="false">
+                    <li class="sidebar-item @if($menu['active']) selected @endif">
+                        <a class="sidebar-link waves-effect waves-dark @if(isset($menu['children']) && count($menu['children'])) has-arrow @endif" href="{{ $menu['url'] }}" aria-expanded="false">
                             <i class="{{ $menu['icon'] }}"></i>
                             <span class="hide-menu">
                                 {{ !is_array(trans($menu['name'])) ? trans($menu['name']) : null }}
@@ -26,7 +26,7 @@
                     </li>
 
                 @endforeach
-
+                
 
             </ul>
         </nav>

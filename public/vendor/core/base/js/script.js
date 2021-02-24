@@ -44,7 +44,6 @@ $(function() {
 
                 // open our new menu and add the open class
                 $(this).next("ul").addClass("in");
-                $(this).next("ul").show();
                 $(this).addClass("active");
 
             }
@@ -52,7 +51,6 @@ $(function() {
                 $(this).removeClass("active");
                 $(this).parents("ul:first").removeClass("active");
                 $(this).next("ul").removeClass("in");
-                $(this).next("ul").hide();
             }
     })
     $('#sidebarnav >li >a.has-arrow').on('click', function (e) {
