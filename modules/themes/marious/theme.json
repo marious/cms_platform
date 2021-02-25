@@ -1,0 +1,8 @@
+{
+    "name": "marious Theme",
+    "namespace": "Theme\\Marious\\",
+    "description": "Marious Theme",
+    "author": "Mohammed Raya",
+    "version": "1.0",
+    "required_plugins": []
+}

@@ -1,6 +1,6 @@
 <?php
 
-namespace Botble\Contact\Events;
+namespace EG\Contact\Events;
 
 use EG\Base\Events\Event;
 use Eloquent;

@@ -1,6 +1,6 @@
 <?php
 namespace EG\Contact\Http\Controllers;
-use Botble\Contact\Events\SentContactEvent;
+use EG\Contact\Events\SentContactEvent;
 use EG\Base\Http\Responses\BaseHttpResponse;
 use EG\Contact\Http\Requests\ContactRequest;
 use EG\Contact\Repositories\Interfaces\ContactInterface;

@@ -470,7 +470,7 @@ class ThemeOption
         $option = Arr::get($this->fields[$this->optName], $key);
 
         if ($option && Arr::get($option, 'clean_tags', true)) {
-            $value = clean($value);
+            $value = $this->clean($value);
         }
 
         Setting::set($this->getOptionKey($key, $this->getCurrentLocaleCode()), $value);
@@ -547,5 +547,19 @@ class ThemeOption
     public function saveOptions()
     {
         return setting()->save();
+    }
+
+    public function clean($str)
+    {
+        if(is_array($str)){
+            $return = array();
+            foreach($str as $k=>$v){
+                $return[$this->clean(($k))] = $this->clean($v);
+            }
+            return $return;
+        }else{
+            $str = @trim($str);
+            return $str;
+        }
     }
 }

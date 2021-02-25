@@ -12,7 +12,7 @@ use EG\Service\Services\BusinessSolutionsService;
  */
 class PublicController extends BaseController
 {
-	public function getBySlug($slug, \Botble\Slug\Repositories\Interfaces\SlugInterface $slugRepository)
+	public function getBySlug($slug, \EG\Slug\Repositories\Interfaces\SlugInterface $slugRepository)
 	{
 	    $slug = $slugRepository->getFirstBy(['key' => $slug, 'reference_type' => BusinessSolutions::class]);
 	    if (!$slug) {
@@ -28,7 +28,7 @@ class PublicController extends BaseController
 	    return Theme::scope('service', compact('data'))->render();
 	}
 
-	public function getServiceBySlug($slug, BusinessSolutionsService $businessSolutionsService, \Botble\Slug\Repositories\Interfaces\SlugInterface $slugRepository)
+	public function getServiceBySlug($slug, BusinessSolutionsService $businessSolutionsService, \EG\Slug\Repositories\Interfaces\SlugInterface $slugRepository)
 	{
 		$slug = $slugRepository->getFirstBy(['key' => $slug, 'reference_type' => BusinessSolutions::class]);
 	    if (!$slug) {
