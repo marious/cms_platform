@@ -45,4 +45,8 @@ return [
     'link'                    => 'Link',
     'show_hide_editor'        => 'Show/Hide Editor',
     'basic_info_title'        => 'Basic information',
+    'phone'                   => 'Phone',
+    'mobile'                  => 'Mobile',
+    'phone_placeholder'       => 'Phone',
+    'mobile_placeholder'      => 'Mobile',
 ];
