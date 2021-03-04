@@ -17,6 +17,11 @@ class AppointmentForm extends FormAbstract
 
     public function buildForm()
     {
+        $appointmentTime = isset($this->model->appointment_date) ? strtotime($this->model->appointment_date) : strtotime(date('Y-m-d H:i'));
+
+        $appointmentFormat = isset($this->model->appointment_date) ? date('Y-m-d H:i', strtotime($this->model->appointment_date))
+            : now(config('app.timezone'))->format('Y-m-d H:i');
+
         $this
             ->setupModel(new Appointment())
             ->setValidatorClass(AppointmentRequest::class)
@@ -59,8 +64,10 @@ class AppointmentForm extends FormAbstract
                 'attr'       => [
                     'id'                => 'datetimepicker',
                     'class'             => 'form-control form-date-time',
-                    'date-date'         => 
+                    'data-date-format' => 'Y-MM-DD hh:mm',
                 ],
+                'value'                 => $appointmentFormat,
+//                'default_value' => now(config('app.timezone'))->format('Y-m-d H:i'),
             ])
 
             ->add('message', 'textarea', [

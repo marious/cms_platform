@@ -17,7 +17,7 @@ class AppointmentRequest extends Request
             'patient_email'         => 'email|max:150',
             'message'               => 'max:255',
             'department_id'         => Rule::in(array_keys(get_departments(false))),
-            'appointment_date'      => 'required|date_format:m/d/Y H:i',
+            'appointment_date'      => 'required|date_format:Y-m-d H:i',
         ];
     }
 }

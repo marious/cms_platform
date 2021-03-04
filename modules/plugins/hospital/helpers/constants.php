@@ -11,3 +11,7 @@ if (!defined('HOSPITAL_DEPARTMENT_MODULE_SCREEN_NAME')) {
 if (!defined('HOSPITAL_DOCTOR_MODULE_SCREEN_NAME')) {
     define('HOSPITAL_DOCTOR_MODULE_SCREEN_NAME', 'hospital doctor');
 }
+
+if (!defined('HOSPITAL_Appointment_MODULE_SCREEN_NAME')) {
+    define('HOSPITAL_Appointment_MODULE_SCREEN_NAME', 'hospital appointment');
+}

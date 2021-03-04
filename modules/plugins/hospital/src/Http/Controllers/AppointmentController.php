@@ -11,10 +11,9 @@ use EG\Base\Http\Controllers\BaseController;
 use EG\Base\Http\Responses\BaseHttpResponse;
 use EG\Base\Traits\HasDeleteManyItemsTrait;
 use EG\Hospital\Forms\AppointmentForm;
-use EG\Hospital\Forms\DepartmentForm;
-use EG\Hospital\Http\Requests\DepartmentRequest;
+use EG\Hospital\Http\Requests\AppointmentRequest;
 use EG\Hospital\Repositories\Interfaces\AppointmentInterface;
-use EG\Hospital\Tables\DepartmentTable;
+use EG\Hospital\Tables\AppointmentTAble;
 use Illuminate\Http\Request;
 use Exception;
 use Assets2;
@@ -30,9 +29,9 @@ class AppointmentController extends BaseController
         $this->appointmentRepository = $appointmentRepository;
     }
 
-    public function index(DepartmentTable $table)
+    public function index(AppointmentTAble $table)
     {
-        page_title()->setTitle(trans('plugins/hospital::hospital.departments'));
+        page_title()->setTitle(trans('plugins/hospital::hospital.appointments'));
 
         return $table->renderTable();
     }
@@ -52,39 +51,45 @@ class AppointmentController extends BaseController
     }
 
 
-    public function store(DepartmentRequest $request, BaseHttpResponse $response)
+    public function store(AppointmentRequest $request, BaseHttpResponse $response)
     {
-        $department = $this->departmentRepository->createOrUpdate($request->input());
+        $appointment = $this->appointmentRepository->createOrUpdate($request->input());
 
-        event(new CreatedContentEvent(HOSPITAL_DEPARTMENT_MODULE_SCREEN_NAME, $request, $department));
+        event(new CreatedContentEvent(HOSPITAL_Appointment_MODULE_SCREEN_NAME, $request, $appointment));
 
         return $response
-                ->setPreviousUrl(route('departments.index'))
-                ->setNextUrl(route('departments.edit', $department->id))
+                ->setPreviousUrl(route('appointments.index'))
+                ->setNextUrl(route('appointments.edit', $appointment->id))
                 ->setMessage(trans('core/base::notices.create_success_message'));
     }
 
 
     public function edit($id, FormBuilder $formBuilder, Request $request)
     {
-        $department = $this->departmentRepository->findOrFail($id);
+        $appointment = $this->appointmentRepository->findOrFail($id);
 
-        event(new BeforeEditContentEvent($request, $department));
+        Assets2::addScripts(['moment', 'datetimepicker'])
+            ->addStyles(['datetimepicker'])
+            ->addScriptsDirectly([
+                'vendor/core/plugins/hospital/js/hospital.js',
+            ]);
 
-        page_title()->setTitle(trans('plugins/hospital::department.edit') . ' " ' . $department->name . '"');
+        event(new BeforeEditContentEvent($request, $appointment));
 
-        return $formBuilder->create(DepartmentForm::class, ['model' => $department])->renderForm();
+        page_title()->setTitle(trans('plugins/hospital::appointments.edit') . ' " ' . $appointment->name . '"');
+
+        return $formBuilder->create(AppointmentForm::class, ['model' => $appointment])->renderForm();
     }
 
-    public function update($id, DepartmentRequest $request, BaseHttpResponse $response)
+    public function update($id, AppointmentRequest $request, BaseHttpResponse $response)
     {
-        $department = $this->departmentRepository->findOrFail($id);
-        $department->fillMultiLang($request->input());
-        $this->departmentRepository->createOrUpdate($department);
-        event(new UpdatedContentEvent(HOSPITAL_DEPARTMENT_MODULE_SCREEN_NAME, $request, $department));  // This event will go to make slug
+        $appointment = $this->appointmentRepository->findOrFail($id);
+        $appointment->fill($request->input());
+        $this->appointmentRepository->createOrUpdate($appointment);
+        event(new UpdatedContentEvent(HOSPITAL_Appointment_MODULE_SCREEN_NAME, $request, $appointment));  // This event will go to make slug
 
         return $response
-                ->setPreviousUrl(route('departments.index'))
+                ->setPreviousUrl(route('appointments.index'))
                 ->setMessage(trans('core/base::notices.update_success_message'));
 
     }
@@ -92,9 +97,9 @@ class AppointmentController extends BaseController
     public function destroy(Request $request, $id, BaseHttpResponse $response)
     {
         try {
-            $department = $this->departmentRepository->findOrFail($id);
-            $this->departmentRepository->delete($department);
-            event(new DeletedContentEvent(HOSPITAL_DEPARTMENT_MODULE_SCREEN_NAME, $request, $department));
+            $appointment = $this->appointmentRepository->findOrFail($id);
+            $this->appointmentRepository->delete($appointment);
+            event(new DeletedContentEvent(HOSPITAL_Appointment_MODULE_SCREEN_NAME, $request, $appointment));
             return $response->setMessage(trans('core/base::notices.delete_success_message'));
         } catch (Exception $e) {
             return $response
@@ -105,6 +110,6 @@ class AppointmentController extends BaseController
 
     public function deletes(Request $request, BaseHttpResponse $response)
     {
-        $this->executeDeleteItems($request, $response, $this->departmentRepository, HOSPITAL_DEPARTMENT_MODULE_SCREEN_NAME);
+        $this->executeDeleteItems($request, $response, $this->appointmentRepository, HOSPITAL_Appointment_MODULE_SCREEN_NAME);
     }
 }
