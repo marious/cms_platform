@@ -1,0 +1,9 @@
+{
+    "name": "Hospital",
+    "namespace": "EG\\Hospital\\",
+    "provider": "EG\\Hospital\\Providers\\HospitalServiceProvider",
+    "author": "N/A",
+    "url": "N/A",
+    "version": "1.0",
+    "description": "The description for module hospital"
+}

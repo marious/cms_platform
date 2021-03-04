@@ -8,7 +8,6 @@ return [
         'jquery',
         'popper',
         'bootstrap',
-        'core',
         'perfectScrollbar',
         'select2',
         'waves',
@@ -19,6 +18,7 @@ return [
         'fancybox',
         'datepicker',
         'custom-scrollbar',
+        'core',
     ],
     'styles' => [
         'fontawesome',
@@ -53,6 +53,7 @@ return [
                     'local' => LIB_PATH . 'bootstrap/dist/js/bootstrap.min.js'
                 ],
             ],
+
             'perfectScrollbar' => [
                 'use_cdn' => false,
                 'location' => 'footer',
@@ -173,11 +174,12 @@ return [
                     'cdn'   => '//cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js',
                 ],
             ],
+
             'datepicker'          => [
                 'use_cdn'  => false,
-                'location' => 'header',
+                'location' => 'footer',
                 'src'      => [
-                    'local' => '/vendor/core/base/libraries/bootstrap-datepicker/css/bootstrap-datepicker3.min.css',
+                    'local' => '/vendor/core/base/libraries/bootstrap-datepicker/js/bootstrap-datepicker.min.js',
                 ],
             ],
             'form-validation' => [
@@ -294,7 +296,7 @@ return [
                 'use_cdn'  => false,
                 'location' => 'header',
                 'src'      => [
-                    'local' => '/vendor/core/base/libraries/bootstrap-datepicker/css/bootstrap-datepicker3.min.css',
+                    'local' => '/vendor/core/base/libraries/bootstrap-datepicker/css/bootstrap-datepicker.min.css',
                 ],
             ],
             'datetimepicker'      => [

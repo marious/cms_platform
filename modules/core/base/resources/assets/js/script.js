@@ -311,9 +311,12 @@ class Falcon {
                 changeYear: true,
                 autoclose: true,
                 dateFormat: format,
+                zIndexOffset: 10000,
             });
         }
     }
+
+
 
     static initResources() {
         if (jQuery().select2) {

@@ -1,8 +1,3 @@
 {
-    "/vendor/core/plugins/gallery/js/gallery.js": "/vendor/core/plugins/gallery/js/gallery.js",
-    "/vendor/core/plugins/gallery/css/gallery.css": "/vendor/core/plugins/gallery/css/gallery.css",
-    "/vendor/core/plugins/gallery/css/object-gallery.css": "/vendor/core/plugins/gallery/css/object-gallery.css",
-    "/vendor/core/plugins/gallery/css/admin-gallery.css": "/vendor/core/plugins/gallery/css/admin-gallery.css",
-    "/vendor/core/plugins/gallery/js/gallery-admin.js": "/vendor/core/plugins/gallery/js/gallery-admin.js",
-    "/vendor/core/plugins/gallery/js/object-gallery.js": "/vendor/core/plugins/gallery/js/object-gallery.js"
+    "/vendor/core/plugins/hospital/js/hospital.js": "/vendor/core/plugins/hospital/js/hospital.js"
 }

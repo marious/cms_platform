@@ -7,4 +7,4 @@ const mix = require('laravel-mix');
 // require('./modules/packages/seo-helper/webpack.mix.js');
 
 // Run only for plugins
-require('./modules/plugins/gallery/webpack.mix.js');
+require('./modules/plugins/hospital/webpack.mix.js');
