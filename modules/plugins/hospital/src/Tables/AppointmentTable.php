@@ -17,7 +17,7 @@ use RvMedia;
 use Html;
 use BaseHelper;
 
-class AppointmentTAble extends TableAbstract
+class AppointmentTable extends TableAbstract
 {
 
     protected $hasActions = true;

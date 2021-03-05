@@ -13,7 +13,7 @@ use EG\Base\Traits\HasDeleteManyItemsTrait;
 use EG\Hospital\Forms\AppointmentForm;
 use EG\Hospital\Http\Requests\AppointmentRequest;
 use EG\Hospital\Repositories\Interfaces\AppointmentInterface;
-use EG\Hospital\Tables\AppointmentTAble;
+use EG\Hospital\Tables\AppointmentTable;
 use Illuminate\Http\Request;
 use Exception;
 use Assets2;
@@ -29,7 +29,7 @@ class AppointmentController extends BaseController
         $this->appointmentRepository = $appointmentRepository;
     }
 
-    public function index(AppointmentTAble $table)
+    public function index(AppointmentTable $table)
     {
         page_title()->setTitle(trans('plugins/hospital::hospital.appointments'));
 
