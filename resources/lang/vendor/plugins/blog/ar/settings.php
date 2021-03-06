@@ -1,6 +1,6 @@
 <?php
 
 return [
-    'select'       => '-- Select --',
-    'blog_page_id' => 'Blog page',
+    'select'       => '-- اختر --',
+    'blog_page_id' => 'صفحة المقالات',
 ];

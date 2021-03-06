@@ -1,6 +1,6 @@
 <?php
 
 return [
-    'menu_name' => 'المدونة',
-    'blog_page' => 'Blog Page',
+    'menu_name' => 'المقالات',
+    'blog_page' => 'صفحة المقالات',
 ];

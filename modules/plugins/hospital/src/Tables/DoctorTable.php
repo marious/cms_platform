@@ -24,6 +24,7 @@ class DoctorTable extends TableAbstract
 
     protected $departmentRepository;
 
+
     public function __construct(DataTables $table, UrlGenerator $urlGenerator, DoctorInterface $doctorRepository, DepartmentInterface $departmentRepository)
     {
         $this->repository = $doctorRepository;

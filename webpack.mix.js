@@ -1,10 +1,10 @@
 const mix = require('laravel-mix');
 
 
-// require('./modules/core/base/webpack.mix.js');
+require('./modules/core/base/webpack.mix.js');
 
 // Run only for package
 // require('./modules/packages/seo-helper/webpack.mix.js');
 
 // Run only for plugins
-require('./modules/plugins/hospital/webpack.mix.js');
+// require('./modules/plugins/hospital/webpack.mix.js');

@@ -2,20 +2,20 @@
 
 return [
     'form'          => [
-        'name'                    => 'Name',
-        'name_placeholder'        => 'Tag\'s name (Maximum 120 characters)',
-        'description'             => 'Description',
-        'description_placeholder' => 'Short description for tag (Maximum 400 characters)',
-        'categories'              => 'Categories',
+        'name'                    => 'الاسم',
+        'name_placeholder'        => 'اسم الوسم (بحد أقصى 120 حرفًا)',
+        'description'             => 'الوصف',
+        'description_placeholder' => 'وصف قصير للعلامة (بحد أقصى 400 حرف)',
+        'categories'              => 'التصنيفات',
     ],
     'notices'       => [
-        'no_select' => 'Please select at least one tag to take this action!',
+        'no_select' => 'الرجاء تحديد وسم واحد على الأقل لاتخاذ هذا الإجراء!',
     ],
-    'create'        => 'Create new tag',
-    'edit'          => 'Edit tag',
-    'cannot_delete' => 'Tag could not be deleted',
-    'deleted'       => 'Tag deleted',
-    'menu'          => 'Tags',
-    'edit_this_tag' => 'Edit this tag',
-    'menu_name'     => 'Tags',
+    'create'        => 'وسم جدبد',
+    'edit'          => 'تعديل الوسم',
+    'cannot_delete' => 'لا يمكن حذف الوسم',
+    'deleted'       => 'حذف الوسم',
+    'menu'          => 'الوسوم',
+    'edit_this_tag' => 'تعديل الوسم',
+    'menu_name'     => 'الوسوم',
 ];

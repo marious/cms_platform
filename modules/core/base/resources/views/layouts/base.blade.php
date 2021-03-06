@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" dir="ltr">
+<html lang="en" dir="{{ setting('locale_direction') == 'rtl' ? 'rtl': 'ltr'}}">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
@@ -9,6 +9,9 @@
     <title>{{ page_title()->getTitle() }}</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     {!! Assets2::renderHeader(['core']) !!}
+    @if(setting('locale_direction') == 'rtl')
+        <link rel="stylesheet" href="{{ asset('vendor/rtl.css') }}">
+    @endif
     @yield('head')
     @stack('header')
 </head>

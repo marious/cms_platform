@@ -1,9 +1,9 @@
 <?php
 return [
-    '401_title' => 'Permission Denied',
-    '401_msg'   => '<li>You have not been granted access to the section by the administrator.</li>
-	                <li>You may have the wrong account type.</li>
-	                <li>You are not authorized to view the requested resource.</li>
+    '401_title' => 'الاذن مرفوض',
+    '401_msg'   => '<li>لم يتم منحك حق الوصول إلى القسم من قبل المسؤول.</li>
+	                <li>قد يكون لديك نوع حساب خاطئ.</li>
+	                <li>أنت غير مصرح لك لعرض الموارد المطلوبة.</li>
 	                <li>Your subscription may have expired.</li>',
     '404_title' => 'Page could not be found',
     '404_msg'   => '<li>The page you requested does not exist.</li>

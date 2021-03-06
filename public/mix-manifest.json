@@ -1,3 +1,4 @@
 {
-    "/vendor/core/plugins/hospital/js/hospital.js": "/vendor/core/plugins/hospital/js/hospital.js"
+    "/vendor/core/base/js/core.js": "/vendor/core/base/js/core.js",
+    "/vendor/core/base/css/theme/default.css": "/vendor/core/base/css/theme/default.css"
 }
