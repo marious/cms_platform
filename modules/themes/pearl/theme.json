@@ -1,0 +1,8 @@
+{
+    "name": "Pearl Group Theme",
+    "namespace": "Theme\\Pearl\\",
+    "description": "Pearl Theme",
+    "author": "Leaders Group M.Raya",
+    "version": "1.0",
+    "required_plugins": []
+}

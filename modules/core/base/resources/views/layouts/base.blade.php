@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" dir="{{ setting('locale_direction') == 'rtl' ? 'rtl': 'ltr'}}">
+<html lang="{{ config('app.locale') }}" dir="{{ setting('locale_direction') == 'rtl' ? 'rtl': 'ltr'}}">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
