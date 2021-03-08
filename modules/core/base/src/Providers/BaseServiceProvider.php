@@ -63,10 +63,14 @@ class BaseServiceProvider extends ServiceProvider
 
             $config = $this->app->make('config');
             $setting = $this->app->make(SettingStore::class);
+
+            //echo $config->get('core.base.general.locale');exit;
             $config->set([
-                'app.locale'        => setting('locale', $config->get('core.base.general.locale', $config->get('app.locale'))),
+               // 'app.locale'        => setting('locale', $config->get('core.base.general.locale', $config->get('app.locale'))),
                 'app.timezone'      => $setting->get('time_zone', $config->get('app.timezone')),
             ]);
+
+            app()->setLocale(setting('locale', $config->get('core.base.general.locale', $config->get('app.locale'))));
         });
 
 
