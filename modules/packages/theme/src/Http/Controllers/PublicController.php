@@ -74,8 +74,7 @@ class PublicController extends Controller
         if (empty($key)) {
             return $this->getIndex($response);
         }
-
-        $slug = $this->slugRepository->getFirstBy(['key' => $key, 'prefix' => '']);
+        $slug = $this->slugRepository->getFirstBy(['key->ar' => $key, 'prefix' => '']);
 
         if (!$slug) {
             abort(404);

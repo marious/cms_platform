@@ -184,6 +184,7 @@ return [
         EG\Table\Providers\TableServiceProvider::class,
         EG\Base\Providers\ComposerServiceProvider::class,
         EG\JsValidation\Providers\JsValidationServiceProvider::class,
+        EG\Dashboard\Providers\DashboardServiceProvider::class,
 
     ],
 

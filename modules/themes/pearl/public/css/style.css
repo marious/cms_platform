@@ -2,12 +2,12 @@
 
 @font-face {
   font-family: "DroidArabicKufi";
-  src: url("/fonts/DroidArabicKufi.woff");
+  src: url("../fonts/DroidArabicKufi.woff");
 }
 
 @font-face {
   font-family: "DroidKufi-Bold";
-  src: url("/fonts/DroidKufi-Bold.woff");
+  src: url("../fonts/DroidKufi-Bold.woff");
 }
 
 * {
@@ -249,7 +249,7 @@ li {
   z-index: 999;
 }
 
-/*** 
+/***
 
 ====================================================================
   Scroll To Top
@@ -276,7 +276,7 @@ li {
   transition: all 300ms ease;
 }
 
-/*** 
+/***
 
 ====================================================================
   Main Header
@@ -631,7 +631,7 @@ li {
   margin-left: 30px;
 }
 
-/*** 
+/***
 
 ====================================================================
 	Sticky Header
@@ -677,7 +677,7 @@ li {
   display: none;
 }
 
-/*** 
+/***
 
 ====================================================================
 	Mobile Header
@@ -815,7 +815,7 @@ li {
   margin-right: 10px;
 }
 
-/*** 
+/***
 
 ====================================================================
   Banner Section Three
@@ -1549,7 +1549,7 @@ Owl Carousel Arrows
   background-color: #164943;
 }
 
-/*** 
+/***
 
 ====================================================================
     Service Section Four
@@ -1704,7 +1704,7 @@ Owl Carousel Arrows
   opacity: 0.05;
 }
 
-/*** 
+/***
 
 ====================================================================
   Testimonial Section

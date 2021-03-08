@@ -89,4 +89,10 @@ if (!function_exists('get_app_version')) {
   }
 }
 
+ function clean($value)
+{
+    return e(strip_tags($value));
+}
+
+
 

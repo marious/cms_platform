@@ -1,7 +1,7 @@
 const mix = require('laravel-mix');
 
 
-require('./modules/core/base/webpack.mix.js');
+require('./modules/core/dashboard/webpack.mix.js');
 
 // Run only for package
 // require('./modules/packages/seo-helper/webpack.mix.js');

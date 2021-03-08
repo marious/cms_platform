@@ -69,6 +69,7 @@
             "EG\\Table\\": "modules/core/table/src/",
             "EG\\Media\\": "modules/core/media/src/",
             "EG\\JsValidation\\": "modules/core/js-validation/src/",
+            "EG\\Dashboard\\": "modules/core/dashboard/src/",
             "Database\\Factories\\": "database/factories/",
             "Database\\Seeders\\": "database/seeders/"
         }

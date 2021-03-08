@@ -68,6 +68,11 @@ class PageServiceProvider extends ServiceProvider
             SeoHelper::registerModule([Page::class]);
         });
 
+        $this->app->booted(function () {
+            $this->app->register(HookServiceProvider::class);
+        });
+
+
         $this->app->register(EventServiceProvider::class);
     }
 }

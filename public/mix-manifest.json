@@ -1,4 +1,4 @@
 {
-    "/vendor/core/base/js/core.js": "/vendor/core/base/js/core.js",
-    "/vendor/core/base/css/theme/default.css": "/vendor/core/base/css/theme/default.css"
+    "/vendor/core/dashboard/js/dashboard.js": "/vendor/core/dashboard/js/dashboard.js",
+    "/vendor/core/dashboard/css/dashboard.css": "/vendor/core/dashboard/css/dashboard.css"
 }

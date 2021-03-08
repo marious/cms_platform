@@ -1,6 +1,6 @@
 <?php
 
-use Botble\Theme\Theme;
+use EG\Theme\Theme;
 
 return [
 
@@ -52,8 +52,8 @@ return [
 
             // You may use this event to set up your assets.
             $theme->asset()->usePath()
-                ->usePath()->add('font-awesome', 'fontawesome-all.css')
-                ->usePath()->add('flaticon', 'flaticon.css')
+                ->usePath()->add('fontawesome-all', 'css/fontawesome-all.css')
+                ->usePath()->add('flaticon', 'css/flaticon.css')
                 ->usePath()->add('bootstrap', 'css/bootstrap.min.css')
                 ->usePath()->add('mmenu', 'css/mmenu.css')
                 ->usePath()->add('owl', 'css/owl.css')
@@ -73,7 +73,7 @@ return [
                 ->usePath()->add('script', 'js/script.js');
 
             if (function_exists('shortcode')) {
-                $theme->composer(['index', 'page', 'post'], function (\Botble\Shortcode\View\View $view) {
+                $theme->composer(['index', 'page', 'post'], function (\EG\Shortcode\View\View $view) {
                     $view->withShortcodes();
                 });
             }
