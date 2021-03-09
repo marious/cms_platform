@@ -1,22 +1,22 @@
 <?php
 
-namespace EG\Menu\Http\Controllers;
+namespace Botble\Menu\Http\Controllers;
 
-use EG\Base\Events\BeforeEditContentEvent;
-use EG\Base\Events\CreatedContentEvent;
-use EG\Base\Events\DeletedContentEvent;
-use EG\Base\Events\UpdatedContentEvent;
-use EG\Base\Forms\FormBuilder;
-use EG\Base\Http\Controllers\BaseController;
-use EG\Base\Http\Responses\BaseHttpResponse;
-use EG\Menu\Forms\MenuForm;
-use EG\Menu\Repositories\Interfaces\MenuLocationInterface;
-use EG\Menu\Tables\MenuTable;
-use EG\Menu\Http\Requests\MenuRequest;
-use EG\Menu\Repositories\Eloquent\MenuRepository;
-use EG\Menu\Repositories\Interfaces\MenuInterface;
-use EG\Menu\Repositories\Interfaces\MenuNodeInterface;
-use EG\Support\Services\Cache\Cache;
+use Botble\Base\Events\BeforeEditContentEvent;
+use Botble\Base\Events\CreatedContentEvent;
+use Botble\Base\Events\DeletedContentEvent;
+use Botble\Base\Events\UpdatedContentEvent;
+use Botble\Base\Forms\FormBuilder;
+use Botble\Base\Http\Controllers\BaseController;
+use Botble\Base\Http\Responses\BaseHttpResponse;
+use Botble\Menu\Forms\MenuForm;
+use Botble\Menu\Http\Requests\MenuRequest;
+use Botble\Menu\Repositories\Eloquent\MenuRepository;
+use Botble\Menu\Repositories\Interfaces\MenuInterface;
+use Botble\Menu\Repositories\Interfaces\MenuLocationInterface;
+use Botble\Menu\Repositories\Interfaces\MenuNodeInterface;
+use Botble\Menu\Tables\MenuTable;
+use Botble\Support\Services\Cache\Cache;
 use Exception;
 use Illuminate\Cache\CacheManager;
 use Illuminate\Contracts\View\Factory;
@@ -128,11 +128,10 @@ class MenuController extends BaseController
     {
         $locations = $request->input('locations', []);
 
-        $this->menuLocationRepository
-            ->getModel()
-            ->where('menu_id', $menu->id)
-            ->whereNotIn('location', $locations)
-            ->delete();
+        $this->menuLocationRepository->deleteBy([
+            'menu_id' => $menu->id,
+            ['location', 'NOT_IN', $locations],
+        ]);
 
         foreach ($locations as $location) {
             $menuLocation = $this->menuLocationRepository->firstOrCreate([
@@ -152,7 +151,7 @@ class MenuController extends BaseController
      * @param FormBuilder $formBuilder
      * @return string
      */
-    public function edit($id, Request $request, FormBuilder $formBuilder)
+    public function edit($id, FormBuilder $formBuilder, Request $request)
     {
         page_title()->setTitle(trans('packages/menu::menu.edit'));
 
@@ -191,7 +190,7 @@ class MenuController extends BaseController
 
         $deletedNodes = explode(' ', ltrim($request->input('deleted_nodes', '')));
         if ($deletedNodes) {
-            $this->menuNodeRepository->getModel()->whereIn('id', $deletedNodes)->delete();
+            $this->menuNodeRepository->deleteBy([['id', 'IN', $deletedNodes]]);
         }
         Menu::recursiveSaveMenu(json_decode($request->input('menu_nodes'), true), $menu->id, 0);
 

@@ -1,16 +1,16 @@
 <?php
 
-namespace EG\Menu\Repositories\Eloquent;
+namespace Botble\Menu\Repositories\Eloquent;
 
-use EG\Menu\Repositories\Interfaces\MenuNodeInterface;
-use EG\Support\Repositories\Eloquent\RepositoriesAbstract;
+use Botble\Menu\Repositories\Interfaces\MenuNodeInterface;
+use Botble\Support\Repositories\Eloquent\RepositoriesAbstract;
 
 class MenuNodeRepository extends RepositoriesAbstract implements MenuNodeInterface
 {
     /**
      * {@inheritDoc}
      */
-    public function getByMenuId($menuId, $parentId, $select = ['*'], array $with = ['child', 'reference', 'reference.slugable'])
+    public function getByMenuId($menuId, $parentId, $select = ['*'], array $with = ['child'])
     {
         $data = $this->model
             ->with($with)

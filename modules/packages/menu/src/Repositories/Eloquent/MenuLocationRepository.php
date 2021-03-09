@@ -1,11 +1,10 @@
 <?php
 
-namespace EG\Menu\Repositories\Eloquent;
+namespace Botble\Menu\Repositories\Eloquent;
 
-use EG\Support\Repositories\Eloquent\RepositoriesAbstract;
-use EG\Menu\Repositories\Interfaces\MenuLocationInterface;
+use Botble\Menu\Repositories\Interfaces\MenuLocationInterface;
+use Botble\Support\Repositories\Eloquent\RepositoriesAbstract;
 
 class MenuLocationRepository extends RepositoriesAbstract implements MenuLocationInterface
 {
-
 }

@@ -1,12 +1,19 @@
 <?php
-namespace EG\Menu\Http\Requests;
 
-use EG\Base\Enums\BaseStatusEnum;
-use EG\Support\Http\Requests\Request;
+namespace Botble\Menu\Http\Requests;
+
+use Botble\Base\Enums\BaseStatusEnum;
+use Botble\Support\Http\Requests\Request;
 use Illuminate\Validation\Rule;
 
 class MenuRequest extends Request
 {
+
+    /**
+     * Get the validation rules that apply to the request.
+     *
+     * @return array
+     */
     public function rules()
     {
         return [

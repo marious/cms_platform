@@ -1,8 +1,11 @@
 <?php
 
-namespace EG\Menu\Models;
+namespace Botble\Menu\Models;
 
-use EG\Base\Models\BaseModel;
+use Botble\Base\Models\BaseModel;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
+use Request;
 
 class MenuNode extends BaseModel
 {
@@ -60,6 +63,10 @@ class MenuNode extends BaseModel
      */
     public function getUrlAttribute($value)
     {
+        if ($value) {
+            return apply_filters(MENU_FILTER_NODE_URL, $value);
+        }
+
         if (!$this->reference_type) {
             return $value ? (string)$value : '/';
         }
@@ -131,4 +138,3 @@ class MenuNode extends BaseModel
         return $this->title;
     }
 }
-

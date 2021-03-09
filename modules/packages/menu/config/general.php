@@ -1,4 +1,5 @@
 <?php
+
 return [
     'locations' => [
         'header-menu' => 'Header Navigation',

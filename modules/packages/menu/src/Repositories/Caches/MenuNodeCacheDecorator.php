@@ -1,13 +1,16 @@
 <?php
 
-namespace EG\Menu\Repositories\Caches;
+namespace Botble\Menu\Repositories\Caches;
 
-use EG\Support\Repositories\Caches\CacheAbstractDecorator;
-use EG\Menu\Repositories\Interfaces\MenuNodeInterface;
+use Botble\Menu\Repositories\Interfaces\MenuNodeInterface;
+use Botble\Support\Repositories\Caches\CacheAbstractDecorator;
 
 class MenuNodeCacheDecorator extends CacheAbstractDecorator implements MenuNodeInterface
 {
-    public function getByMenuId($menuId, $parentId, $select = ['*'], array $with = ['child', 'reference', 'reference.slugable'])
+    /**
+     * {@inheritDoc}
+     */
+    public function getByMenuId($menuId, $parentId, $select = ['*'], array $with = ['child'])
     {
         return $this->getDataIfExistCache(__FUNCTION__, func_get_args());
     }

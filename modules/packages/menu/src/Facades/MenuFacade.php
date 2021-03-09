@@ -1,8 +1,8 @@
 <?php
 
-namespace EG\Menu\Facades;
+namespace Botble\Menu\Facades;
 
-use EG\Menu\Menu;
+use Botble\Menu\Menu;
 use Illuminate\Support\Facades\Facade;
 
 class MenuFacade extends Facade

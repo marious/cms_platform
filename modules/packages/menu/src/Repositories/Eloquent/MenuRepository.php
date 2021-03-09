@@ -1,10 +1,10 @@
 <?php
 
-namespace EG\Menu\Repositories\Eloquent;
+namespace Botble\Menu\Repositories\Eloquent;
 
-use EG\Base\Enums\BaseStatusEnum;
-use EG\Menu\Repositories\Interfaces\MenuInterface;
-use EG\Support\Repositories\Eloquent\RepositoriesAbstract;
+use Botble\Base\Enums\BaseStatusEnum;
+use Botble\Menu\Repositories\Interfaces\MenuInterface;
+use Botble\Support\Repositories\Eloquent\RepositoriesAbstract;
 use Illuminate\Support\Str;
 
 class MenuRepository extends RepositoriesAbstract implements MenuInterface

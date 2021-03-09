@@ -1,28 +1,28 @@
 <?php
 
-namespace EG\Menu\Providers;
+namespace Botble\Menu\Providers;
 
-use EG\Base\Supports\Helper;
-use EG\Base\Traits\LoadAndPublishTrait;
-use EG\Menu\Models\Menu as MenuModel;
-use EG\Menu\Models\MenuLocation;
-use EG\Menu\Models\MenuNode;
-use EG\Menu\Repositories\Caches\MenuCacheDecorator;
-use EG\Menu\Repositories\Caches\MenuLocationCacheDecorator;
-use EG\Menu\Repositories\Caches\MenuNodeCacheDecorator;
-use EG\Menu\Repositories\Eloquent\MenuLocationRepository;
-use EG\Menu\Repositories\Eloquent\MenuNodeRepository;
-use EG\Menu\Repositories\Eloquent\MenuRepository;
-use EG\Menu\Repositories\Interfaces\MenuInterface;
-use EG\Menu\Repositories\Interfaces\MenuLocationInterface;
-use EG\Menu\Repositories\Interfaces\MenuNodeInterface;
+use Botble\Base\Supports\Helper;
+use Botble\Base\Traits\LoadAndPublishDataTrait;
+use Botble\Menu\Models\Menu as MenuModel;
+use Botble\Menu\Models\MenuLocation;
+use Botble\Menu\Models\MenuNode;
+use Botble\Menu\Repositories\Caches\MenuCacheDecorator;
+use Botble\Menu\Repositories\Caches\MenuLocationCacheDecorator;
+use Botble\Menu\Repositories\Caches\MenuNodeCacheDecorator;
+use Botble\Menu\Repositories\Eloquent\MenuLocationRepository;
+use Botble\Menu\Repositories\Eloquent\MenuNodeRepository;
+use Botble\Menu\Repositories\Eloquent\MenuRepository;
+use Botble\Menu\Repositories\Interfaces\MenuInterface;
+use Botble\Menu\Repositories\Interfaces\MenuLocationInterface;
+use Botble\Menu\Repositories\Interfaces\MenuNodeInterface;
 use Event;
 use Illuminate\Routing\Events\RouteMatched;
 use Illuminate\Support\ServiceProvider;
 
 class MenuServiceProvider extends ServiceProvider
 {
-    use LoadAndPublishTrait;
+    use LoadAndPublishDataTrait;
 
     public function register()
     {
@@ -75,7 +75,7 @@ class MenuServiceProvider extends ServiceProvider
                         'id'          => 'cms-core-appearance',
                         'priority'    => 996,
                         'parent_id'   => null,
-                        'name'        => 'core/base::layouts.appearance',
+                        'name'        => 'packages/theme::theme.appearance',
                         'icon'        => 'fa fa-paint-brush',
                         'url'         => '#',
                         'permissions' => [],
@@ -86,5 +86,8 @@ class MenuServiceProvider extends ServiceProvider
                 admin_bar()->registerLink(trans('packages/menu::menu.name'), route('menus.index'), 'appearance');
             }
         });
+
+        $this->app->register(EventServiceProvider::class);
+        $this->app->register(CommandServiceProvider::class);
     }
 }

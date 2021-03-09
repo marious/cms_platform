@@ -1,14 +1,14 @@
 <?php
 
-namespace EG\Menu\Tables;
+namespace Botble\Menu\Tables;
 
 use BaseHelper;
-use EG\Menu\Models\Menu;
+use Botble\Menu\Models\Menu;
 use Html;
 use Illuminate\Support\Facades\Auth;
-use EG\Base\Enums\BaseStatusEnum;
-use EG\Menu\Repositories\Interfaces\MenuInterface;
-use EG\Table\Abstracts\TableAbstract;
+use Botble\Base\Enums\BaseStatusEnum;
+use Botble\Menu\Repositories\Interfaces\MenuInterface;
+use Botble\Table\Abstracts\TableAbstract;
 use Illuminate\Contracts\Routing\UrlGenerator;
 use Illuminate\Validation\Rule;
 use Yajra\DataTables\DataTables;

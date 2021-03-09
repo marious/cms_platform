@@ -1,12 +1,12 @@
 <?php
 
-namespace EG\Menu\Forms;
+namespace Botble\Menu\Forms;
 
-use Assets2;
-use EG\Base\Enums\BaseStatusEnum;
-use EG\Base\Forms\FormAbstract;
-use EG\Menu\Http\Requests\MenuRequest;
-use EG\Menu\Models\Menu;
+use Assets;
+use Botble\Base\Enums\BaseStatusEnum;
+use Botble\Base\Forms\FormAbstract;
+use Botble\Menu\Http\Requests\MenuRequest;
+use Botble\Menu\Models\Menu;
 
 class MenuForm extends FormAbstract
 {
@@ -16,10 +16,10 @@ class MenuForm extends FormAbstract
      */
     public function buildForm()
     {
-        Assets2::addScriptsDirectly([
-            'vendor/core/packages/menu/libraries/jquery-nestable/jquery.nestable.js',
-            'vendor/core/packages/menu/js/menu.js',
-        ])
+        Assets::addScriptsDirectly([
+                'vendor/core/packages/menu/libraries/jquery-nestable/jquery.nestable.js',
+                'vendor/core/packages/menu/js/menu.js',
+            ])
             ->addStylesDirectly([
                 'vendor/core/packages/menu/libraries/jquery-nestable/jquery.nestable.css',
                 'vendor/core/packages/menu/css/menu.css',

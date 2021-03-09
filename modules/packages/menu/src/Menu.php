@@ -1,12 +1,12 @@
 <?php
 
-namespace EG\Menu;
+namespace Botble\Menu;
 
-use EG\Base\Enums\BaseStatusEnum;
-use EG\Menu\Repositories\Eloquent\MenuRepository;
-use EG\Menu\Repositories\Interfaces\MenuInterface;
-use EG\Menu\Repositories\Interfaces\MenuNodeInterface;
-use EG\Support\Services\Cache\Cache;
+use Botble\Base\Enums\BaseStatusEnum;
+use Botble\Menu\Repositories\Eloquent\MenuRepository;
+use Botble\Menu\Repositories\Interfaces\MenuInterface;
+use Botble\Menu\Repositories\Interfaces\MenuNodeInterface;
+use Botble\Support\Services\Cache\Cache;
 use Collective\Html\HtmlBuilder;
 use Exception;
 use Illuminate\Cache\CacheManager;

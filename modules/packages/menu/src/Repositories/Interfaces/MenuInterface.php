@@ -1,10 +1,12 @@
 <?php
-namespace EG\Menu\Repositories\Interfaces;
 
-use EG\Support\Repositories\Interfaces\RepositoryInterface;
+namespace Botble\Menu\Repositories\Interfaces;
+
+use Botble\Support\Repositories\Interfaces\RepositoryInterface;
 
 interface MenuInterface extends RepositoryInterface
 {
+
     /**
      * @param string $slug
      * @param bool $active

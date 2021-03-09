@@ -1,32 +1,51 @@
 <?php
 
-namespace EG\Menu\Models;
+namespace Botble\Menu\Models;
 
-use EG\Base\Enums\BaseStatusEnum;
-use EG\Base\Models\BaseModel;
-use EG\Base\Traits\EnumCastable;
+use Botble\Base\Enums\BaseStatusEnum;
+use Botble\Base\Traits\EnumCastable;
+use Botble\Base\Models\BaseModel;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Menu extends BaseModel
 {
+
     use EnumCastable;
 
+    /**
+     * The database table used by the model.
+     *
+     * @var string
+     */
     protected $table = 'menus';
 
+    /**
+     * @var array
+     */
     protected $fillable = [
         'name',
         'slug',
         'status',
     ];
 
+    /**
+     * @var array
+     */
     protected $casts = [
         'status' => BaseStatusEnum::class,
     ];
 
+    /**
+     * @return HasMany
+     */
     public function menuNodes()
     {
         return $this->hasMany(MenuNode::class, 'menu_id');
     }
 
+    /**
+     * @return HasMany
+     */
     public function locations()
     {
         return $this->hasMany(MenuLocation::class, 'menu_id');

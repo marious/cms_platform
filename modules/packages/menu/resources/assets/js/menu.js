@@ -236,7 +236,7 @@ class MenuNestable {
         accordion.on('hidden.bs.collapse', toggleChevron);
         accordion.on('shown.bs.collapse', toggleChevron);
 
-        Falcon.callScroll($('.list-item'));
+        Botble.callScroll($('.list-item'));
     }
 }
 
